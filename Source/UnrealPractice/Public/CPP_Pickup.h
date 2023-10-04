@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Interactable.h"
 #include "CPP_Pickup.generated.h"
 
 UCLASS()
-class UNREALPRACTICE_API ACPP_Pickup : public AActor
+class UNREALPRACTICE_API ACPP_Pickup : public AActor, public IInteractable
 {
 	GENERATED_BODY()
 	
@@ -22,5 +23,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	UFUNCTION(BlueprintCallable)
+		virtual void Interact() override;
 
 };

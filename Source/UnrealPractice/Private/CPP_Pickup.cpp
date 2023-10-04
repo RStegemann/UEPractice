@@ -3,6 +3,8 @@
 
 #include "CPP_Pickup.h"
 
+#include "Kismet/KismetSystemLibrary.h"
+
 // Sets default values
 ACPP_Pickup::ACPP_Pickup()
 {
@@ -23,5 +25,14 @@ void ACPP_Pickup::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void ACPP_Pickup::Interact()
+{
+	IInteractable::Interact();
+	UKismetSystemLibrary::PrintString(this, "Destroyed pickup from CPP.");
+	Execute_OnInteract(this);
+	Execute_OnNativeInteract(this, this);
+	Destroy();
 }
 

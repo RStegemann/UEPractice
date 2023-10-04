@@ -8,7 +8,7 @@ ACPP_Character::ACPP_Character()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	TestArray = {23, 6 , 32, 12, 123, 5123};
 }
 
 // Called when the game starts or when spawned
